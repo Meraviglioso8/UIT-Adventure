@@ -47,3 +47,6 @@ TagManager:
   - name: BG2
     uniqueID: 2205471821
     locked: 0
+  - name: Player
+    uniqueID: 1175026149
+    locked: 0
