@@ -41,11 +41,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: BG1
-    uniqueID: 95664155
+  - name: Land
+    uniqueID: 3755553783
     locked: 0
-  - name: BG2
-    uniqueID: 2205471821
+  - name: Floor
+    uniqueID: 1669726307
+    locked: 0
+  - name: 'Wall '
+    uniqueID: 2969465227
+    locked: 0
+  - name: Low_object
+    uniqueID: 2728290865
+    locked: 0
+  - name: Object
+    uniqueID: 4062137153
     locked: 0
   - name: Player
     uniqueID: 1175026149
