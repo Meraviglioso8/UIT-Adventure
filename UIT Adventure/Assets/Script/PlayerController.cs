@@ -9,11 +9,17 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     private bool isMoving;
     private Vector2 input;
+    private Animator animator;
+    public LayerMask solibObjectsLayer;
     private void Start()
     {
-       
+
     }
-  
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     // Update is called once per frame
     private void Update()
     {
@@ -22,18 +28,29 @@ public class PlayerController : MonoBehaviour
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
 
+            Debug.Log("Input x: " + input.x);
+            Debug.Log("input y: " + input.y);
+
+
+
+
             if (input.x != 0) input.y = 0;
             if (input.y != 0) input.x = 0;
 
             if (input != Vector2.zero)
             {
+                animator.SetFloat("moveX", input.x);
+                animator.SetFloat("moveY", input.y);
+
                 var targetPos = transform.position;
                 targetPos.x += input.x;
                 targetPos.y += input.y;
 
-                StartCoroutine(Move(targetPos));
+                if(isWalkable(targetPos))
+                    StartCoroutine(Move(targetPos));
             }
         }
+        animator.SetBool("isMoving", isMoving);
     }
     IEnumerator Move(Vector3 targetPos)
     {
@@ -45,5 +62,11 @@ public class PlayerController : MonoBehaviour
         }
         transform.position = targetPos;
         isMoving = false;
+    }
+    private bool isWalkable(Vector3 targetPos)
+    {
+        if (Physics2D.OverlapCircle(targetPos, 0.2f, solibObjectsLayer) != null)
+        { return false; }
+        return true;
     }
 }
