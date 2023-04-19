@@ -11,6 +11,14 @@ public class PlayerController : MonoBehaviour
     private Vector2 input;
     private Animator animator;
     public LayerMask solibObjectsLayer;
+
+    //shot
+    public Transform gunTip;
+    public GameObject bullet;
+    float firerate = 0.2f;
+    float nextFire = 0;
+    
+
     private void Start()
     {
 
@@ -51,6 +59,10 @@ public class PlayerController : MonoBehaviour
             }
         }
         animator.SetBool("isMoving", isMoving);
+
+        //shoot form mouse
+        if (Input.GetAxisRaw("Fire1") > 0)
+            fireBullet();
     }
     IEnumerator Move(Vector3 targetPos)
     {
@@ -69,4 +81,27 @@ public class PlayerController : MonoBehaviour
         { return false; }
         return true;
     }
+
+    //shot
+    void fireBullet(){
+    if (Time.time > nextFire){
+        nextFire = Time.time + firerate;
+
+        // Tính toán hướng bắn
+        Vector4 mousePos = Input.mousePosition;
+        mousePos.z = 10; // Khoảng cách từ camera đến màn hình
+        Vector4 objectPos = Camera.main.WorldToScreenPoint(gunTip.position);
+        mousePos.x = mousePos.x - objectPos.x;
+        mousePos.y = mousePos.y - objectPos.y;
+        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+
+        // Xoay súng
+        gunTip.rotation = Quaternion.Euler(new Vector4(0, 0, angle));
+
+        // Bắn đạn
+        Instantiate(bullet, gunTip.position, gunTip.rotation);
+        }
+    }
+
+    
 }
