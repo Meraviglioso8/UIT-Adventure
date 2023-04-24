@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletHit : MonoBehaviour
 {
-
+    public float weaponDamage;
     ProjectTileController myPC;
     // Start is called before the first frame update
     void Awake()
@@ -27,6 +27,11 @@ public class BulletHit : MonoBehaviour
         if (other.gameObject.tag == "Unshootable"){
             myPC.removeForce();
             Destroy(gameObject);
+
+            if (other.gameObject.layer == LayerMask.NameToLayer("enemy")){
+                EnemyHealth hurtEnemy = other.gameObject.GetComponent < EnemyHealth>();
+                hurtEnemy.addDamage(weaponDamage);
+            }
         }
     }
 
