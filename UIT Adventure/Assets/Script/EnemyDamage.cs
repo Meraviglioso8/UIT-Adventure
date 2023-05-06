@@ -27,18 +27,6 @@ public class EnemyDamage : MonoBehaviour
             PlayerHealth thePlayerHeath = other.gameObject.GetComponent<PlayerHealth>();
             thePlayerHeath.addDamage(damage);
             nextDamage = dameRate + Time.time;
-            
-            pushBack(other.transform);
         }
-    }
-
-    void pushBack(Transform pushedObject){
-        Vector2 pushDirection = (pushedObject.position - transform.position).normalized;
-        pushDirection *= pushBackForce;
-        Rigidbody2D pushRB = pushedObject.gameObject.GetComponent<Rigidbody2D>();
-        //reset luc ve zero
-        pushRB.velocity = Vector2.zero;
-        //push back
-        pushRB.AddForce(pushDirection, ForceMode2D.Impulse);
     }
 }
