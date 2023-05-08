@@ -8,6 +8,11 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     public float moveSpeed;
     private bool isMoving;
+    private bool isUp;
+    private bool isDown;
+    private bool isRight;
+    private bool isLeft;
+    private bool isShooting;
     private Vector2 input;
     private Animator animator;
     public LayerMask solibObjectsLayer;
@@ -62,7 +67,18 @@ public class PlayerController : MonoBehaviour
 
         //shoot form mouse
         if (Input.GetAxisRaw("Fire1") > 0)
+        {
             fireBullet();
+            isShooting = true;
+            animator.SetBool("isShooting", isShooting);
+
+        }
+        else
+        {
+            isShooting = false;
+            animator.SetBool("isShooting", isShooting);
+        }
+
     }
     IEnumerator Move(Vector3 targetPos)
     {
