@@ -289,7 +289,6 @@ GameObject:
   - component: {fileID: 71455977}
   - component: {fileID: 71455976}
   - component: {fileID: 71455975}
-  - component: {fileID: 71455978}
   m_Layer: 5
   m_Name: Quality
   m_TagString: Untagged
@@ -433,21 +432,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71455973}
   m_CullTransparentMesh: 1
---- !u!114 &71455978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71455973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e1c7c24bbe073042ab88799f8caf2a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeSlider: {fileID: 0}
-  audioSource: {fileID: 0}
-  resolutionDropdown: {fileID: 0}
 --- !u!1 &100932787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,7 +1456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &619701645
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3081,7 +3065,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4040,7 +4024,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4647,7 +4631,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1693916403}
   - component: {fileID: 1693916404}
-  - component: {fileID: 1693916405}
   m_Layer: 5
   m_Name: Toggle
   m_TagString: Untagged
@@ -4724,7 +4707,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1693916405}
+      - m_Target: {fileID: 619701648}
         m_TargetAssemblyTypeName: SettingScript, Assembly-CSharp
         m_MethodName: OnFullScreenChange
         m_Mode: 0
@@ -4737,21 +4720,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
---- !u!114 &1693916405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693916402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e1c7c24bbe073042ab88799f8caf2a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeSlider: {fileID: 0}
-  audioSource: {fileID: 0}
-  resolutionDropdown: {fileID: 0}
 --- !u!1 &1702722649
 GameObject:
   m_ObjectHideFlags: 0
