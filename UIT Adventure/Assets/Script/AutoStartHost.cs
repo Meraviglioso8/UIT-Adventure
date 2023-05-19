@@ -1,24 +1,28 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using MLAPI;
+using UnityEngine.Networking;
+using Unity.Netcode;
 
 public class AutoStartHost : MonoBehaviour
 {
+    public NetworkManager networkManager;
     private void Start()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
+        
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (NetworkManager.Singleton != null && !NetworkManager.Singleton.IsHost)
+        if (networkManager == null)
         {
-            NetworkManager.Singleton.StartHost();
+            Debug.LogError("NetworkManager component is missing. Please attach the NetworkManager component to the same GameObject.");
+            return;
         }
-    }
 
-    private void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        if (NetworkManager.Singleton.IsHost)
+        {
+            networkManager.StartClient(); // Start as client if there is a host in the network
+        }
+        else
+        {
+            networkManager.StartHost(); // Start as host
+        }
     }
 }
