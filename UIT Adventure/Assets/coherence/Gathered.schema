@@ -1,0 +1,22 @@
+component character_0_id0_UnityEngine__char_46_Animator_4031187718391344175
+  Blend Float [compression "None"]
+  moveX Float [compression "None"]
+  moveY Float [compression "None"]
+  isMoving Bool [bits "1"]
+  isShooting Bool [bits "1"]
+
+archetype character_0_f940cdd672670304c88aa319a24efa31
+  lod 0
+    WorldPosition 
+      value [compression "None"]
+    WorldOrientation 
+      value [bits "32"]
+    GenericScale 
+      value [compression "None"]
+    character_0_id0_UnityEngine__char_46_Animator_4031187718391344175 
+      number [compression "None"]
+      number [compression "None"]
+      number [compression "None"]
+      number [bits "1"]
+      number [bits "1"]
+
