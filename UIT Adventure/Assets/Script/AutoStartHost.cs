@@ -1,44 +1,16 @@
 using Unity.Netcode;
 using UnityEngine;
 
-public class AutoStartHost : NetworkBehaviour
+public class AutoStartHost : MonoBehaviour
 {
-    private static bool isFirstInstance;
     public NetworkManager NetworkManager;
+    public string serverIPAddress = "127.0.0.1"; 
+    public ushort serverPort = 7777; 
 
     private void Awake()
     {
-        isFirstInstance = PlayerPrefs.GetInt("IsFirstInstance", 1) == 1;
-
-        if (isFirstInstance)
-        {
-            NetworkManager.OnServerStarted += OnServerStarted;
-            NetworkManager.StartHost();
-            PlayerPrefs.SetInt("IsFirstInstance", 0);
-        }
-        else
-        {
-            NetworkManager.StartClient();
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (NetworkManager.IsServer)
-        {
-            PlayerPrefs.DeleteKey("IsFirstInstance");
-            PlayerPrefs.Save();
-        }
-    }
-
-    private void OnServerStarted()
-    {
-        NetworkManager.OnServerStopped += OnServerStopped;
-    }
-
-    private void OnServerStopped()
-    {
-        PlayerPrefs.DeleteKey("IsFirstInstance");
-        PlayerPrefs.Save();
+        NetworkManager.ServerIPv4Address = serverIPAddress;
+        NetworkManager.ServerPort = serverPort;
+        NetworkManager.StartHost();
     }
 }
