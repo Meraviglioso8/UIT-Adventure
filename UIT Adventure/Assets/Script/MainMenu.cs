@@ -5,14 +5,22 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    public void exitButton(){
+    public void exitButton()
+    {
         Application.Quit();
         Debug.Log("Game closed");
     }
 
-    public void startButton(){
-        SceneManager.LoadScene("SampleScene");
+    public void startButton()
+    {
+        SceneManager.LoadScene(1);
     }
+
+    public void exitloginButton()
+    {
+        SceneManager.LoadScene(1);
+    }
+
 
     // Start is called before the first frame update
     void Start()
