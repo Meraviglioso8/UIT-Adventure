@@ -1,19 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform objectToFollow;
+
+    public Transform target;
     public Vector3 offset;
-
-    private void LateUpdate()
+    // Start is called before the first frame update
+    void Start()
     {
-        if (objectToFollow == null)
-        {
-            Debug.LogWarning("No object to follow assigned to CameraFollow script.");
-            return;
-        }
+    }
 
-        // Set the camera position to match the character's position plus the offset
-        transform.position = objectToFollow.position + offset;
+    // Update is called once per frame
+    void Update()
+    {
+         transform.position = target.position + offset;
     }
 }
