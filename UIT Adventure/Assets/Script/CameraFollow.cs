@@ -1,20 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class CameraFollow : MonoBehaviour
+using System.Collections;
+using Unity.Netcode;
+public class CameraFollow : NetworkBehaviour
 {
-
-    public Transform target;
-    public Vector3 offset;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    public Camera cam;
+    private void Update()
     {
+        if (!IsOwner)
+        {
+            cam.enabled = false;
+            return;
+        }
+        cam.enabled = true;
+       
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-         transform.position = target.position + offset;
-    }
 }

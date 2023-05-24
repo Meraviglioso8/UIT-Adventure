@@ -7,6 +7,7 @@ using Unity.Netcode;
 public class PlayerController : NetworkBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] private Transform spawnObject;
     public float moveSpeed;
     private bool isMoving;
     private bool isUp;
@@ -41,6 +42,7 @@ public class PlayerController : NetworkBehaviour
         if (!isMoving)
         {
             if (!IsOwner) return;
+
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
 
