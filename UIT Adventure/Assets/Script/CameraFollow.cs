@@ -13,8 +13,5 @@ public class CameraFollow : NetworkBehaviour
             return;
         }
         cam.enabled = true;
-       
-
     }
-
 }
