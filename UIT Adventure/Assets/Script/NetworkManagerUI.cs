@@ -11,7 +11,9 @@ public class NetworkManagerUI : MonoBehaviour
     [SerializeField] private Button clientBtn;
     [SerializeField] private TMP_InputField joinCode;
 
-    private void Awake()
+    public Transform spawnPoint;
+
+    private void Start()
     {
          // START HOST
         hostBtn?.onClick.AddListener(async () =>
@@ -21,7 +23,13 @@ public class NetworkManagerUI : MonoBehaviour
                 await RelayManager.Instance.SetupRelay();
 
             if (NetworkManager.Singleton.StartHost())
+            {
                 Logger.Instance.LogInfo("Host started...");
+
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                player.transform.position = spawnPoint.transform.position;
+            }
+
             else
                 Logger.Instance.LogInfo("Unable to start host...");
         });
@@ -33,9 +41,15 @@ public class NetworkManagerUI : MonoBehaviour
                 await RelayManager.Instance.JoinRelay(joinCode.text);
 
             if(NetworkManager.Singleton.StartClient())
+            {
                 Logger.Instance.LogInfo("Client started...");
+
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                player.transform.position = spawnPoint.transform.position;
+            }
+                
             else
                 Logger.Instance.LogInfo("Unable to start client...");
         });
-    }
+    }    
 }

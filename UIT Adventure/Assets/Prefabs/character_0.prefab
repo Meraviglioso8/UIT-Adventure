@@ -156,12 +156,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757fef7d1d9a18749b62ad9f267e5abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnObject: {fileID: 0}
   moveSpeed: 10
   solibObjectsLayer:
     serializedVersion: 2
     m_Bits: 128
   gunTip: {fileID: 4395458563821039414}
   bullet: {fileID: 3420509808946693152, guid: 4b894fa3e83d1ad4eb951a4b2a4661e2, type: 3}
+  spawnPoint: {fileID: 0}
 --- !u!95 &4395458564629543987
 Animator:
   serializedVersion: 5

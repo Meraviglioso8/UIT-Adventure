@@ -7,7 +7,6 @@ using Unity.Netcode;
 public class PlayerController : NetworkBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private Transform spawnObject;
     public float moveSpeed;
     private bool isMoving;
     private bool isUp;
@@ -24,11 +23,10 @@ public class PlayerController : NetworkBehaviour
     public GameObject bullet;
     float firerate = 0.2f;
     float nextFire = 0;
-    
 
     private void Start()
     {
-
+        
     }
     private void Awake()
     {
@@ -116,7 +114,7 @@ public class PlayerController : NetworkBehaviour
         mousePos.y = mousePos.y - objectPos.y;
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 
-        // Xoay súng
+        //Hướng
         gunTip.rotation = Quaternion.Euler(new Vector4(0, 0, angle));
 
         // Bắn đạn
