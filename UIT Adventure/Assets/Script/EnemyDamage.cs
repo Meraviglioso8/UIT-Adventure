@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-
+    [SerializeField]
     public float damage;
+    
+    [SerializeField]
     float dameRate = 0.25f;
+    
     public float pushBackForce;
     float nextDamage;
     // Start is called before the first frame update

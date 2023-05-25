@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 3838686230881388351}
   - component: {fileID: -6002195834076330778}
   - component: {fileID: -9061224629887508195}
+  - component: {fileID: -7394303577355580927}
   m_Layer: 0
   m_Name: character_0
   m_TagString: Player
@@ -156,14 +157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757fef7d1d9a18749b62ad9f267e5abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnObject: {fileID: 0}
   moveSpeed: 10
   solibObjectsLayer:
     serializedVersion: 2
     m_Bits: 128
   gunTip: {fileID: 4395458563821039414}
   bullet: {fileID: 3420509808946693152, guid: 4b894fa3e83d1ad4eb951a4b2a4661e2, type: 3}
-  spawnPoint: {fileID: 0}
 --- !u!95 &4395458564629543987
 Animator:
   serializedVersion: 5
@@ -302,6 +301,18 @@ MonoBehaviour:
   ScaleThreshold: 0.01
   InLocalSpace: 0
   Interpolate: 1
+--- !u!114 &-7394303577355580927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395458564629543999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d7c879794dfda4687da0e400131852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4526267497536372231
 GameObject:
   m_ObjectHideFlags: 0

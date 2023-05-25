@@ -7,7 +7,7 @@ using Unity.Netcode;
 public class PlayerController : NetworkBehaviour
 {
     // Start is called before the first frame update
-    public float moveSpeed;
+    [SerializeField]public float moveSpeed;
     private bool isMoving;
     private bool isUp;
     private bool isDown;
@@ -19,10 +19,10 @@ public class PlayerController : NetworkBehaviour
     public LayerMask solibObjectsLayer;
 
     //shot
-    public Transform gunTip;
-    public GameObject bullet;
-    float firerate = 0.2f;
-    float nextFire = 0;
+    [SerializeField]public Transform gunTip;
+    [SerializeField]public GameObject bullet;
+    [SerializeField]float firerate = 0.2f;
+    [SerializeField]float nextFire = 0;
 
     private void Start()
     {

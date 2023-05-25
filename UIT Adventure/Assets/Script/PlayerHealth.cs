@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.Netcode;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : NetworkBehaviour
 {
 
-    public float maxHealth;
-    float currentHealth;
+    [SerializeField]public float maxHealth;
+    [SerializeField]float currentHealth;
 
     //UI variables
-    public Slider playerHeathSlider;
-
+    public Slider playerHeathSlider ;
     // Start is called before the first frame update
     void Start()
     {
+        playerHeathSlider = GameObject.FindGameObjectWithTag ("playerhealthslider")
+            .GetComponent<Slider>();
+    
         currentHealth = maxHealth;
         playerHeathSlider.maxValue = maxHealth;
         playerHeathSlider.value = maxHealth;
