@@ -16,9 +16,7 @@ public class NetworkManagerUI : MonoBehaviour
          // START HOST
         hostBtn?.onClick.AddListener(async () =>
         {
-            // this allows the UnityMultiplayer and UnityMultiplayerRelay scene to work with and without
-            // relay features - if the Unity transport is found and is relay protocol then we redirect all the 
-            // traffic through the relay, else it just uses a LAN type (UNET) communication.
+            
             if (RelayManager.Instance.IsRelayEnabled) 
                 await RelayManager.Instance.SetupRelay();
 
