@@ -11,13 +11,11 @@ public class ProjectTileController : NetworkBehaviour
     void Awake(){
         myBody = GetComponent<Rigidbody2D>();
 
-        // Get the position of the mouse cursor in world space
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
 
         // Calculate the direction vector from the current position of the bullet to the mouse cursor position
         Vector2 direction = (mousePosition - transform.position).normalized;
-
         // Add a force in the direction of the mouse click
         myBody.AddForce(direction * bulletSpeed, ForceMode2D.Impulse);
     }

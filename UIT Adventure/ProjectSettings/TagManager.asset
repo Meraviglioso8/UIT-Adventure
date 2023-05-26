@@ -9,6 +9,8 @@ TagManager:
   - enemy
   - LocalPlayer
   - playerhealthslider
+  - SpawnPoint
+  - Enemy
   layers:
   - Default
   - TransparentFX

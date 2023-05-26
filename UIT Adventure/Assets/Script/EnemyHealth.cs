@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Unity.Netcode;
+using UnityEngine.Networking;
 
 public class EnemyHealth : NetworkBehaviour
 {
@@ -10,6 +11,7 @@ public class EnemyHealth : NetworkBehaviour
     [SerializeField]public float maxHealth;
 
     [SerializeField]public Slider enemyHealthSlider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,7 @@ public class EnemyHealth : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void addDamage(float damage){

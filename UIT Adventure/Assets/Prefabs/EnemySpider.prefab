@@ -384,10 +384,10 @@ GameObject:
   - component: {fileID: 7647083624423799433}
   - component: {fileID: 7647083624423799434}
   - component: {fileID: 7647083624423799437}
-  - component: {fileID: 7647083624423799436}
   - component: {fileID: 6063978045066130174}
   - component: {fileID: 1095136406328913949}
   - component: {fileID: 3325551362936051506}
+  - component: {fileID: 3016107393732198858}
   m_Layer: 6
   m_Name: EnemySpider
   m_TagString: Unshootable
@@ -523,6 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c42fe5641029cf4794c9a97feb4580a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 0
   maxHealth: 50
   enemyHealthSlider: {fileID: 7647083622952451549}
 --- !u!114 &7647083624423799437
@@ -540,22 +541,6 @@ MonoBehaviour:
   damage: 10
   dameRate: 0.25
   pushBackForce: 5
---- !u!114 &7647083624423799436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7647083624423799479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 951099334
-  AlwaysReplicateAsRoot: 0
-  DontDestroyWithOwner: 1
-  AutoObjectParentSync: 1
 --- !u!114 &6063978045066130174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,3 +600,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d7c879794dfda4687da0e400131852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3016107393732198858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7647083624423799479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 951099334
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1

@@ -96,6 +96,7 @@ public class PlayerController : NetworkBehaviour
         transform.position = targetPos;
         isMoving = false;
     }
+    
     private bool isWalkable(Vector3 targetPos)
     {
         if (Physics2D.OverlapCircle(targetPos, 0.2f, solibObjectsLayer) != null)

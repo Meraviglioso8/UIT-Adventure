@@ -1,17 +1,20 @@
+using UITAdventure.Core.Singletons;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Unity.Netcode;
 using TMPro;
+using UnityEngine.SceneManagement;
 
-public class NetworkManagerUI : MonoBehaviour
+public class NetworkManagerUI : Singleton<NetworkManagerUI>
 {
     [SerializeField] private Button hostBtn;
     [SerializeField] private Button clientBtn;
     [SerializeField] private TMP_InputField joinCode;
+    [SerializeField] private Button spawn;    
 
-    public Transform spawnPoint;
+        private bool hasServerStarted;
 
     private void Start()
     {
@@ -27,7 +30,12 @@ public class NetworkManagerUI : MonoBehaviour
                 Logger.Instance.LogInfo("Host started...");
 
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
-                player.transform.position = spawnPoint.transform.position;
+
+                GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
+                if (spawnPoint != null)
+                {
+                    player.transform.position = spawnPoint.transform.position;
+                }
             }
 
             else
@@ -45,11 +53,31 @@ public class NetworkManagerUI : MonoBehaviour
                 Logger.Instance.LogInfo("Client started...");
 
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
-                player.transform.position = spawnPoint.transform.position;
+                
+                GameObject spawnPoint = GameObject.FindGameObjectWithTag("Player");
+                if (spawnPoint != null)
+                {
+                    player.transform.position = spawnPoint.transform.position;
+                }
             }
                 
             else
                 Logger.Instance.LogInfo("Unable to start client...");
+        });
+
+        NetworkManager.Singleton.OnClientConnectedCallback += (id) =>
+        {
+            Logger.Instance.LogInfo($"{id} just connected...");
+        };
+
+        NetworkManager.Singleton.OnServerStarted += () =>
+        {
+            hasServerStarted = true;
+        };
+
+        spawn.onClick.AddListener(() => 
+        {
+            SpawnerControl.Instance.SpawnObjects();
         });
     }    
 }

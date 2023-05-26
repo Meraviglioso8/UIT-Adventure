@@ -24,7 +24,7 @@ public class BulletHit : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other){
-        if (other.gameObject.tag == "Unshootable"){
+        if (other.gameObject.tag == "Unshootable" || other.gameObject.tag == "Enemy"){
             myPC.removeForce();
             Destroy(gameObject);
 
@@ -36,7 +36,7 @@ public class BulletHit : MonoBehaviour
     }
 
     void OnTriggerStay2D(Collider2D other){
-        if (other.gameObject.tag == "Unshootable"){
+        if (other.gameObject.tag == "Unshootable" || other.gameObject.tag == "Enemy"){
             myPC.removeForce();
             Destroy(gameObject);
         }
