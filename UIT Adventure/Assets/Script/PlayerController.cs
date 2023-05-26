@@ -83,6 +83,8 @@ public class PlayerController : NetworkBehaviour
         }
 
     }
+
+
     IEnumerator Move(Vector3 targetPos)
     {
         isMoving = true;
@@ -102,7 +104,7 @@ public class PlayerController : NetworkBehaviour
     }
 
     //shot
-    void fireBullet(){
+    private void fireBullet(){
     if (Time.time > nextFire){
         nextFire = Time.time + firerate;
 

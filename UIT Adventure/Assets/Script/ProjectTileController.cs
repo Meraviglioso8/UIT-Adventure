@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class ProjectTileController : MonoBehaviour
+public class ProjectTileController : NetworkBehaviour
 {
     public float  bulletSpeed;
     Rigidbody2D myBody;
@@ -21,17 +22,12 @@ public class ProjectTileController : MonoBehaviour
         myBody.AddForce(direction * bulletSpeed, ForceMode2D.Impulse);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         
     }
+    
     public void removeForce(){
         myBody.velocity  = new Vector2 (0,0);
     }

@@ -163,6 +163,8 @@ MonoBehaviour:
     m_Bits: 128
   gunTip: {fileID: 4395458563821039414}
   bullet: {fileID: 3420509808946693152, guid: 4b894fa3e83d1ad4eb951a4b2a4661e2, type: 3}
+  firerate: 0.2
+  nextFire: 0
 --- !u!95 &4395458564629543987
 Animator:
   serializedVersion: 5
@@ -196,7 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8059e9a4d620948912cb275e75f79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 100
+  currentHealth: 0
   playerHeathSlider: {fileID: 0}
 --- !u!50 &4395458564629543989
 Rigidbody2D:
@@ -326,7 +329,7 @@ GameObject:
   - component: {fileID: 5905903601752340243}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
