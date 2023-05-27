@@ -5,6 +5,9 @@ public class CameraFollow : NetworkBehaviour
 {
     [SerializeField]
     public Camera cam;
+    
+    public GameObject player;
+    
     private void Update()
     {
         if (!IsOwner)
@@ -13,5 +16,6 @@ public class CameraFollow : NetworkBehaviour
             return;
         }
         cam.enabled = true;
+        cam.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -8f);
     }
 }

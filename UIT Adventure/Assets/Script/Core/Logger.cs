@@ -31,7 +31,7 @@ public class Logger : Singleton<Logger>
 
         if (enabled)
         {
-            debugAreaText.text += $"<color=\"white\">{DateTime.Now.ToString("HH:mm:ss.fff")} {this.GetType().Name} enabled</color>\n";
+            debugAreaText.text += $"<color=\"white\">{DateTime.Now.ToString("HH:mm:ss")} {this.GetType().Name} enabled</color>\n";
         }
     }
 
@@ -39,19 +39,19 @@ public class Logger : Singleton<Logger>
     {
         ClearLines();
 
-        debugAreaText.text += $"<color=\"green\">{DateTime.Now.ToString("HH:mm:ss.fff")} {message}</color>\n";
+        debugAreaText.text += $"<color=\"black\">{DateTime.Now.ToString("HH:mm:ss")} {message}</color>\n";
     }
 
     public void LogError(string message)
     {
         ClearLines();
-        debugAreaText.text += $"<color=\"red\">{DateTime.Now.ToString("HH:mm:ss.fff")} {message}</color>\n";
+        debugAreaText.text += $"<color=\"red\">{DateTime.Now.ToString("HH:mm:ss")} {message}</color>\n";
     }
 
     public void LogWarning(string message)
     {
         ClearLines();
-        debugAreaText.text += $"<color=\"yellow\">{DateTime.Now.ToString("HH:mm:ss.fff")} {message}</color>\n";
+        debugAreaText.text += $"<color=\"yellow\">{DateTime.Now.ToString("HH:mm:ss")} {message}</color>\n";
     }
 
     private void ClearLines()

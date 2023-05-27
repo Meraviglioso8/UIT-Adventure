@@ -8,10 +8,13 @@ public class SpawnerControl : NetworkSingleton<SpawnerControl>
     private GameObject objectPrefab;
 
     [SerializeField]
-    private int maxObjectInstanceCount = 3;
+    private int maxObjectInstanceCount;
 
     [SerializeField]
     public NetworkManager networkManager;
+
+    [SerializeField]
+    public GameObject quad;
 
     private void Awake()
     {
@@ -24,12 +27,22 @@ public class SpawnerControl : NetworkSingleton<SpawnerControl>
     public void SpawnObjects()
     {
         if (!IsServer) return;
+        
+        //define area to spawn enemies
+        MeshCollider c = quad.GetComponent<MeshCollider>();
+        float screenX, screenY;
+        Vector2 pos;
+
         for (int i = 0; i < maxObjectInstanceCount; i++)
         {
-            //GameObject go = Instantiate(objectPrefab, 
-            //    new Vector3(Random.Range(-10, 10), 10.0f, Random.Range(-10, 10)), Quaternion.identity);
             GameObject go = NetworkObjectPool.Instance.GetNetworkObject(objectPrefab).gameObject;
-            go.transform.position = new Vector3(Random.Range(-10, 10), 10.0f, Random.Range(-10, 10));
+
+            //get area of quad object
+            screenX = Random.Range(c.bounds.min.x, c.bounds.max.x);
+            screenY = Random.Range(c.bounds.min.y, c.bounds.max.y);
+            pos = new Vector2(screenX, screenY);
+            
+            go.transform.position = pos;
             go.GetComponent<NetworkObject>().Spawn();
         }
     }

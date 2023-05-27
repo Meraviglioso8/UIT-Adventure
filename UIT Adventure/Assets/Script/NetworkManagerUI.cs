@@ -14,7 +14,7 @@ public class NetworkManagerUI : Singleton<NetworkManagerUI>
     [SerializeField] private TMP_InputField joinCode;
     [SerializeField] private Button spawn;    
 
-        private bool hasServerStarted;
+    private bool hasServerStarted;
 
     private void Start()
     {
@@ -28,14 +28,15 @@ public class NetworkManagerUI : Singleton<NetworkManagerUI>
             if (NetworkManager.Singleton.StartHost())
             {
                 Logger.Instance.LogInfo("Host started...");
+                
+                SpawnerControl.Instance.SpawnObjects();
+                // GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-                GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
-                if (spawnPoint != null)
-                {
-                    player.transform.position = spawnPoint.transform.position;
-                }
+                // GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
+                // if (spawnPoint != null)
+                // {
+                //     player.transform.position = spawnPoint.transform.position;
+                // }
             }
 
             else
@@ -52,13 +53,13 @@ public class NetworkManagerUI : Singleton<NetworkManagerUI>
             {
                 Logger.Instance.LogInfo("Client started...");
 
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                // GameObject player = GameObject.FindGameObjectWithTag("Player");
                 
-                GameObject spawnPoint = GameObject.FindGameObjectWithTag("Player");
-                if (spawnPoint != null)
-                {
-                    player.transform.position = spawnPoint.transform.position;
-                }
+                // GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
+                // if (spawnPoint != null)
+                // {
+                //     player.transform.position = spawnPoint.transform.position;
+                // }
             }
                 
             else
@@ -75,9 +76,9 @@ public class NetworkManagerUI : Singleton<NetworkManagerUI>
             hasServerStarted = true;
         };
 
-        spawn.onClick.AddListener(() => 
-        {
-            SpawnerControl.Instance.SpawnObjects();
-        });
+        // spawn.onClick.AddListener(() => 
+        // {
+        //     SpawnerControl.Instance.SpawnObjects();
+        // });
     }    
 }

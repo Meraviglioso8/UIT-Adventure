@@ -11,6 +11,7 @@ TagManager:
   - playerhealthslider
   - SpawnPoint
   - Enemy
+  - DeadEnemy
   layers:
   - Default
   - TransparentFX

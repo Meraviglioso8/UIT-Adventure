@@ -13,12 +13,13 @@ public class MainMenu : MonoBehaviour
 
     public void startButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void exitloginButton()
     {
-        SceneManager.LoadScene(1);
+        Application.Quit();
+        Debug.Log("Game closed");
     }
 
 

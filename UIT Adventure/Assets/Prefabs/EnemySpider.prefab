@@ -134,7 +134,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.07615566}
+  m_Offset: {x: -0.03263426, y: -0.010887623}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -145,7 +145,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3583794, y: 0.7760124}
+  m_Size: {x: 1.5868177, y: 1.1349878}
   m_EdgeRadius: 0
 --- !u!1 &7647083623514761048
 GameObject:
@@ -384,9 +384,9 @@ GameObject:
   - component: {fileID: 7647083624423799433}
   - component: {fileID: 7647083624423799434}
   - component: {fileID: 7647083624423799437}
-  - component: {fileID: 6063978045066130174}
   - component: {fileID: 1095136406328913949}
-  - component: {fileID: 3325551362936051506}
+  - component: {fileID: 337964622879329490}
+  - component: {fileID: 4737747615193825451}
   - component: {fileID: 3016107393732198858}
   m_Layer: 6
   m_Name: EnemySpider
@@ -526,6 +526,10 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 50
   enemyHealthSlider: {fileID: 7647083622952451549}
+  networkObject: {fileID: 3016107393732198858}
+  targetX: 0
+  targetY: -500
+  targetZ: 0
 --- !u!114 &7647083624423799437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,32 +545,6 @@ MonoBehaviour:
   damage: 10
   dameRate: 0.25
   pushBackForce: 5
---- !u!114 &6063978045066130174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7647083624423799479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 1
-  SyncRotAngleY: 1
-  SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  InLocalSpace: 0
-  Interpolate: 1
 --- !u!50 &1095136406328913949
 Rigidbody2D:
   serializedVersion: 4
@@ -588,7 +566,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3325551362936051506
+--- !u!114 &337964622879329490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7647083624423799479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3296fe8114e941498338a3995647cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  InLocalSpace: 0
+  Interpolate: 1
+--- !u!114 &4737747615193825451
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

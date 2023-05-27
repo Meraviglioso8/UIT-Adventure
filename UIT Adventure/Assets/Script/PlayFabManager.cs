@@ -3,6 +3,7 @@ using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 
@@ -28,6 +29,7 @@ public class PlayFabManager : MonoBehaviour
     void OnRegisterSuccess(RegisterPlayFabUserResult result)
     {
         messageText.text = "Registered and logged in!";
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void LoginButton()
@@ -62,7 +64,7 @@ public class PlayFabManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Login();
+
     }
 
     // Update is called once per frame
@@ -81,6 +83,7 @@ public class PlayFabManager : MonoBehaviour
     {
         messageText.text = "Logged in!";
         Debug.Log("Successful login/account create!");
+        SceneManager.LoadScene("MainMenu");
     }
 
     void OnError(PlayFabError error)
