@@ -20,6 +20,6 @@ public class EndGameCondition : NetworkBehaviour
     {
         remainEnemy = GameObject.FindGameObjectsWithTag("enemy").Length;
         if ((100 - remainEnemy) == credits)
-            SceneManager.LoadScene("EndGame");
+            SceneManager.LoadScene("QuizScene");
     }
 }

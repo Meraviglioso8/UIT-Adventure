@@ -1,6 +1,8 @@
 using UITAdventure.Core.Singletons;
 using Unity.Netcode;
 using UnityEngine;
+using System.Collections.Generic;
+
 
 public class SpawnerControl : NetworkSingleton<SpawnerControl>
 {

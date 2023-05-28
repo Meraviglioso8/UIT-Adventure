@@ -112,20 +112,18 @@ public class PlayerController : NetworkBehaviour
             nextFire = Time.time + firerate;
 
             // Calculate the shooting direction
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = -Camera.main.transform.position.z; // Distance from the camera to the desired plane
-            Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            Vector3 shootingDirection = targetPosition - gunTip.position;
-            shootingDirection.Normalize();
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.z = 10; // Distance from the camera to the screen
+            Vector3 objectPos = Camera.main.WorldToScreenPoint(gunTip.position);
+            mousePos.x = mousePos.x - objectPos.x;
+            mousePos.y = mousePos.y - objectPos.y;
+            float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 
-            // Set the rotation to face the shooting direction
-            Quaternion rotation = Quaternion.LookRotation(Vector3.forward, shootingDirection);
-            gunTip.rotation = rotation;
+            // Set the rotation of the gun tip
+            gunTip.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
-            // Spawn the bullet
-            Instantiate(bullet, gunTip.position, rotation);
+            // Instantiate the bullet
+            Instantiate(bullet, gunTip.position, gunTip.rotation);
         }
     }
-
-    
 }

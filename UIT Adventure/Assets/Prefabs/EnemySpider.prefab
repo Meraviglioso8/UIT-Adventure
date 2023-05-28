@@ -526,10 +526,10 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 50
   enemyHealthSlider: {fileID: 7647083622952451549}
-  networkObject: {fileID: 3016107393732198858}
   targetX: 0
   targetY: -500
   targetZ: 0
+  networkObject: {fileID: 3016107393732198858}
 --- !u!114 &7647083624423799437
 MonoBehaviour:
   m_ObjectHideFlags: 0
