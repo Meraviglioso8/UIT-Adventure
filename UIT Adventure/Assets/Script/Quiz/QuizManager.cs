@@ -12,7 +12,7 @@ public class QuizManager : MonoBehaviour
 
     public TMP_Text QuestionTxt;
 
-    public int Score = 0;
+    public int WrongAns = 0;
 
     void Start()
     {
@@ -21,19 +21,21 @@ public class QuizManager : MonoBehaviour
 
     void EndGame()
     {
-        if (Score == 3)
+        if (WrongAns == 0)
             SceneManager.LoadScene("EndGame");
+        else 
+            SceneManager.LoadScene("EndGame1");
     }
 
     public void Correct()
     {
-        Score++;
         QnA.RemoveAt(currentQuestion);
         genarateQuestion();
     }
 
     public void Wrong()
     {
+        WrongAns++;
         QnA.RemoveAt(currentQuestion);
         genarateQuestion();
     }

@@ -11,8 +11,8 @@ public class NetworkManagerUI : Singleton<NetworkManagerUI>
 {
     [SerializeField] private Button hostBtn;
     [SerializeField] private Button clientBtn;
-    [SerializeField] private TMP_InputField joinCode;
-    [SerializeField] private Button spawn;    
+    [SerializeField] private TMP_InputField joinCode;  
+    [SerializeField] private Button exitBtn;
 
     private bool hasServerStarted;
 
@@ -75,10 +75,14 @@ public class NetworkManagerUI : Singleton<NetworkManagerUI>
         {
             hasServerStarted = true;
         };
-
         // spawn.onClick.AddListener(() => 
         // {
         //     SpawnerControl.Instance.SpawnObjects();
         // });
+    }
+
+    public void onClickExitButton()
+    {
+        SceneManager.LoadScene("MainMenu");
     }    
 }

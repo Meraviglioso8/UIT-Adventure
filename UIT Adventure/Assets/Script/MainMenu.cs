@@ -7,8 +7,7 @@ public class MainMenu : MonoBehaviour
 
     public void exitButton()
     {
-        Application.Quit();
-        Debug.Log("Game closed");
+        SceneManager.LoadScene("LoginScene");
     }
 
     public void startButton()

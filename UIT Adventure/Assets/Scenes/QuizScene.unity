@@ -505,34 +505,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QnA:
-  - Question: 1+1 = ?
+  - Question: "To\xE1n t\u1EED && trong C# \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng
+      \u0111\u1EC3 l\xE0m g\xEC?"
     Answer:
-    - 0
-    - 1
-    - 2
-    - 3
+    - "So s\xE1nh b\u1EB1ng"
+    - "So s\xE1nh kh\xE1c"
+    - "K\u1EBFt h\u1EE3p c\xE1c \u0111i\u1EC1u ki\u1EC7n"
+    - "Chuy\u1EC3n \u0111\u1ED5i ki\u1EC3u d\u1EEF li\u1EC7u"
     CorrectAnswer: 3
-  - Question: 2+2=?
+  - Question: "L\u1EDBp Console trong C# \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3
+      l\xE0m g\xEC?"
     Answer:
-    - 1
-    - 2
-    - 3
-    - 4
-    CorrectAnswer: 4
-  - Question: 3+3=?
+    - "Hi\u1EC3n th\u1ECB th\xF4ng b\xE1o l\u1ED7i"
+    - "Th\u1EF1c hi\u1EC7n c\xE1c ph\xE9p t\xEDnh to\xE1n s\u1ED1 h\u1ECDc"
+    - "Nh\u1EADp v\xE0 xu\u1EA5t d\u1EEF li\u1EC7u t\u1EEB b\xE0n ph\xEDm v\xE0 m\xE0n
+      h\xECnh"
+    - " \u0110i\u1EC1u khi\u1EC3n lu\u1ED3ng c\u1EE7a ch\u01B0\u01A1ng tr\xECnh"
+    CorrectAnswer: 3
+  - Question: "V\xF2ng l\u1EB7p for trong C# \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng
+      \u0111\u1EC3 l\xE0m g\xEC?"
     Answer:
-    - 4
-    - 6
-    - 8
-    - 10
-    CorrectAnswer: 2
-  - Question: 4+4=?
+    - "Th\u1EF1c hi\u1EC7n m\u1ED9t l\u1EC7nh ho\u1EB7c m\u1ED9t kh\u1ED1i l\u1EC7nh
+      nhi\u1EC1u l\u1EA7n"
+    - "Ki\u1EC3m tra m\u1ED9t \u0111i\u1EC1u ki\u1EC7n tr\u01B0\u1EDBc khi th\u1EF1c
+      hi\u1EC7n m\u1ED9t l\u1EC7nh ho\u1EB7c kh\u1ED1i l\u1EC7nh"
+    - "Th\u1EF1c hi\u1EC7n l\u1EB7p v\xF4 h\u1EA1n"
+    - "T\u1EA1o m\u1ED9t ph\u1EA1m vi s\u1ED1 nguy\xEAn t\u1ED1"
+    CorrectAnswer: 1
+  - Question: "Ph\u01B0\u01A1ng th\u1EE9c Main() trong C# l\xE0 g\xEC?"
     Answer:
-    - 6
-    - 8
-    - 10
-    - 12
-    CorrectAnswer: 0
+    - "Ph\u01B0\u01A1ng th\u1EE9c ch\xEDnh c\u1EE7a ch\u01B0\u01A1ng tr\xECnh"
+    - "Ph\u01B0\u01A1ng th\u1EE9c \u0111\u1EC3 in ra m\xE0n h\xECnh"
+    - "Ph\u01B0\u01A1ng th\u1EE9c \u0111\u1EC3 nh\u1EADp d\u1EEF li\u1EC7u t\u1EEB
+      b\xE0n ph\xEDm"
+    - "Ph\u01B0\u01A1ng th\u1EE9c \u0111\u1EC3 th\u1EF1c hi\u1EC7n c\xE1c ph\xE9p
+      t\xEDnh to\xE1n s\u1ED1 h\u1ECDc."
+    CorrectAnswer: 1
   options:
   - {fileID: 1245313777}
   - {fileID: 1566835862}
@@ -540,6 +548,7 @@ MonoBehaviour:
   - {fileID: 8155663}
   currentQuestion: 0
   QuestionTxt: {fileID: 176231987}
+  WrongAns: 0
 --- !u!4 &658331355
 Transform:
   m_ObjectHideFlags: 0
