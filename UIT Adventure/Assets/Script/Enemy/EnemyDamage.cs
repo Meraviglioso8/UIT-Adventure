@@ -16,7 +16,6 @@ public class EnemyDamage : MonoBehaviour
     void Start()
     {
         nextDamage = 0f;
-
     }
 
     // Update is called once per frame

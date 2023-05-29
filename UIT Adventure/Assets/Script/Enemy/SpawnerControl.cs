@@ -10,7 +10,7 @@ public class SpawnerControl : NetworkSingleton<SpawnerControl>
     private GameObject objectPrefab;
 
     [SerializeField]
-    private int maxObjectInstanceCount;
+    public int maxObjectInstanceCount = 100;
 
     [SerializeField]
     public NetworkManager networkManager;

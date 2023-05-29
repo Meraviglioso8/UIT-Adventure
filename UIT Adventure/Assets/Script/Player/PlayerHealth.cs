@@ -8,7 +8,7 @@ public class PlayerHealth : NetworkBehaviour
 {
 
     [SerializeField]public float maxHealth;
-    [SerializeField]float currentHealth;
+    [SerializeField]public float currentHealth;
 
     //UI variables
     public Slider playerHeathSlider ;

@@ -8,18 +8,19 @@ public class EndGameCondition : NetworkBehaviour
 {
     [SerializeField] public int credits;
     [SerializeField] public int remainEnemy;
+    [SerializeField ] public SpawnerControl spawnerControl;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnerControl = FindObjectOfType<SpawnerControl>();
     }
 
     // Update is called once per frame
     void Update()
     {
         remainEnemy = GameObject.FindGameObjectsWithTag("enemy").Length;
-        if ((100 - remainEnemy) == credits)
+        if ((spawnerControl.maxObjectInstanceCount - remainEnemy) == credits)
             SceneManager.LoadScene("QuizScene");
     }
 }
