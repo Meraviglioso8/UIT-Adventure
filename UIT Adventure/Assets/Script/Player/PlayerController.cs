@@ -113,7 +113,7 @@ public class PlayerController : NetworkBehaviour
 
             // Calculate the shooting direction
             Vector3 mousePos = Input.mousePosition;
-            mousePos.z = 10; // Distance from the camera to the screen
+            mousePos.z = -8; // Distance from the camera to the screen
             Vector3 objectPos = Camera.main.WorldToScreenPoint(gunTip.position);
             mousePos.x = mousePos.x - objectPos.x;
             mousePos.y = mousePos.y - objectPos.y;
