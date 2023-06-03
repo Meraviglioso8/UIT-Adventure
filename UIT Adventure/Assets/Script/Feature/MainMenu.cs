@@ -21,6 +21,10 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Game closed");
     }
 
+    public void backGameButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
     // Start is called before the first frame update
     void Start()
