@@ -92,6 +92,7 @@ public class NetworkManagerUI : Singleton<NetworkManagerUI>
 
     public void onClickExitButton()
     {
+        NetworkManager.Singleton.Shutdown();
         SceneManager.LoadScene("MainMenu");
     } 
 
